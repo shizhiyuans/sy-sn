@@ -1,10 +1,10 @@
 <template>
     <!-- <router-link to="/ceshi">111</router-link> -->
-    <div>
+    <div class="bog-box">
         <a href="https://code.suning.cn/5sWP9h" class="fixedd">
             <img src="https://image2.suning.cn/uimg/cms/img/152853499252671742.png" alt="">
         </a>
-        <a href="https://code.suning.cn/5sWP9h" class="small-fixed">
+        <a href="https://m.suning.com/search.html" class="small-fixed">
             <div class="title title-s">
                 <div class="head-flex"><img src="https://image2.suning.cn/uimg/cms/img/157199320847433454.png" alt=""></div>
                 <div class="box-input wocaonima">
@@ -90,27 +90,84 @@
                 </div>
             </div>
         </div>
-
-
-            
+        <div class="bgc">
+            <div class="severn-cin">
+                <div class="severn-cin-img"><img src="https://image1.suning.cn/uimg/cms/img/157164888626937126.png" alt=""></div>
+                <div class="inner-container">
+                    <p class="text" v-for="(text, index) in arr" :key="index"><span>热门</span><span>{{text}}</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="eight-box">
+            <a href="https://cuxiao.m.suning.com/scms/kangshifu1218.html?adTypeCode=1137&adId=https%3A%2F%2Flib.suning.com%2Fweex%2Fkangshifu1218.js%3FpageCode%3Dkangshifu1218" class="eight-box-img"><img src="https://image2.suning.cn/uimg/cms/img/157657007130283783.gif" alt=""></a>
+            <a href="https://cuxiao.m.suning.com/scms/shendan2019.html?adTypeCode=1137&adId=https%3A%2F%2Flib.suning.com%2Fweex%2Fshendan2019.js%3FpageCode%3Dshendan2019" class="eight-box-img"><img src="https://image3.suning.cn/uimg/cms/img/157657047253345365.gif" alt=""></a>
+            <a href="https://cuxiao.m.suning.com/scms/HWGytl0125copy3.html?adTypeCode=1137&adId=https%3A%2F%2Flib.suning.com%2Fweex%2FHWGytl0125copy3.js%3FpageCode%3DHWGytl0125copy3" class="eight-box-img"><img src="https://image2.suning.cn/uimg/cms/img/157657012310422614.gif" alt=""></a>
+        </div>
+        <div class="eight-main">
+            <div class="eight-main-img"><img src="https://image2.suning.cn/uimg/cms/img/157284769790381337.png?from=mobile" alt=""></div>
+        </div>
+        <div class="wang">
+            <div class="wang-1">
+                <div class="wang-wang">
+                    <div class="wang-1-img">
+                        <img src="https://image.suning.cn/uimg/b2c/qrqm/0000000000000000010597918588.jpg?format=_is_200w_200h_4e.webp" alt="">
+                    </div>
+                </div>
+                <div class="caotama">
+                    <div class="wang-2 wanbg">
+                        <span class="wang-2-1">趋势榜</span>
+                    </div>
+                    <div class="wang-2">人气手机榜</div>
+                    <div class="wang-2">本周趋势上升128%</div>
+                </div>
+            </div>
+            <zujianTwo></zujianTwo>
+            <div class="wang-1">
+                <div class="wang-wang">
+                    <div class="wang-1-img">
+                        <img src="https://image.suning.cn/uimg/b2c/qrqm/0000000000000000010546401320.jpg?format=_is_200w_200h_4e.webp" alt="">
+                    </div>
+                </div>
+                <div class="caotama">
+                    <div class="wang-2 wanbg">
+                        <span class="wang-2-1">人气榜</span>
+                    </div>
+                    <div class="wang-2">人气智能电视榜</div>
+                    <div class="wang-2">爆卖4595件</div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
     import Home from "./firstpage/zujian-one.vue"
     import Swiper from 'swiper';
-    import myCompon from "./firstpage/home-1"
+    import myCompon from "./firstpage/home-1.vue"
+    import zujianTwo from "./firstpage/zujian-two.vue"
+
     export default {
             data(){
             return {
+                scroll: '',
+                arr:[
+                    "明星都爱补维C，解密娱乐圈都爱的水果大餐！",
+                    "中国这4款白酒，放的时间越长越好喝，你喝过吗？",
+                    "煎牛排6部曲，在家煎出美味牛排，看这一篇就够了",
+                    "“咔嚓、咔嚓”，周末追剧备好瓜子了嘛！",
+                    "智慧家居时代，你或许也需要一台华为AI智能音箱",
+                    "厨房小课堂，如何选择优质小麦粉"
+                ],
             }
             
         },
         components: {
             myCompon,
-            HomeWork:Home
+            HomeWork:Home,
+            zujianTwo
         },
 
         mounted() {
+            
             var mySwiper = new Swiper('.swiper-container', {
                 autoplay:true,
                 loop:true,
@@ -120,10 +177,24 @@
                 },
 
             });
+
             console.log(mySwiper);
-            var a = document.querySelector(".title-s").scrollHeight
-            console.log(a)
+            document.querySelector(".bog-box").addEventListener('scroll', this.menu)
+
         },
+        methods:{
+            menu () {
+                var app = document.querySelector(".bog-box")
+                app.onscroll = function(){
+                    if(document.querySelector(".bog-box").scrollTop>400){
+                        document.querySelector(".small-fixed").style.display = "block"
+                    }else {
+                        document.querySelector(".small-fixed").style.display = "none"
+                    }
+                }
+            }
+            
+        }
     }
 </script>
 
@@ -256,9 +327,9 @@
         margin: 10px 0
     }
 
-    .cgharu img{
+    .cgharu>img{
         width: 100%;
-        height: 100%
+        height: 150px;
     }
 
     .seven {
@@ -324,6 +395,180 @@
     .wocaonima {
         width: 80%;
     }
+
+    .bog-box {
+        position: relative;
+        height: 100%;
+        overflow: scroll
+    }
+
+    .severn-cin {
+        width: 90%;
+        margin: 0 auto;
+        height: 35px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+        border-bottom-left-radius: 18px;
+        border-bottom-right-radius: 18px;
+        overflow: hidden;
+
+    }
+
+    .severn-cin-img {
+        width: 62px;
+        flex-shrink: 0;
+        height: 17px;
+        margin: 10px;
+    }
+    .severn-cin-img img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .inner-container {
+        animation: myMove 4s linear infinite;
+        animation-fill-mode: forwards;
+    }
+  /*文字无缝滚动*/
+    @keyframes myMove {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-150px);
+        }
+    }
+
+    .text {
+        display: flex;
+        height: 30px;
+        overflow: hidden;
+        padding: 5px 0px;
+        align-items: center
+
+    }
+
+    .text span:first-child {
+        width: 40px;
+        margin-right: 15px;
+        background: rgb(255,204,0);
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .text span:last-child {
+        /* width: 280px; */
+        
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        ;
+    }
+
+    .eight-box {
+        width: 100%;
+        height: 115px;
+        display: flex;
+        justify-content: space-between;
+        background: rgb(240,240,240)
+    }
+    .eight-box .eight-box-img {
+        width: 33.3%;
+        height: 100%;
+
+    }
+    .eight-box .eight-box-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .eight-main-img {
+        width: 100%;
+        height: 33px;
+        background: rgb(240,240,240);
+
+    }
+    .eight-main-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .wang {
+        width: 100%;
+        height: 147px;
+        background: rgb(240,240,240);
+        padding: 0 15px;
+        display: flex;
+        justify-content: space-between
+    }
+
+    .wang-1 {
+        width: 125px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center；
+        
+    }
+
+    .wang-wang {
+        width: 100%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+
+    }
+    .wang-1-img {
+        width: 83px;
+        height: 83px;
+        
+    }
+    .wang-1-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .wang-2 {
+        width: 100%;
+        height: 19px;
+        color: white;
+        text-align: center
+    }
+    .wanbg {
+        position: relative;
+        min-width: 100%;
+        height: 15px;
+    }
+    .wang-2-1 {
+        width: 55px;
+        height: 19px;
+        border: 1px solid rgb(225,166,112);
+        position: absolute;
+        top: -10px;
+        color: rgb(225,166,112);
+        background: #fff;
+        left: 30%;
+        border-radius: 10px;
+    }
+
+    .caotama {
+        width: 100%;
+        background: url(https://image1.suning.cn/uimg/cms/img/156929156220838915.png?from=mobile) no-repeat;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+
+
+
+
+
 
 
 
