@@ -4,6 +4,16 @@
         <a href="https://code.suning.cn/5sWP9h" class="fixedd">
             <img src="https://image2.suning.cn/uimg/cms/img/152853499252671742.png" alt="">
         </a>
+        <a href="https://code.suning.cn/5sWP9h" class="small-fixed">
+            <div class="title title-s">
+                <div class="head-flex"><img src="https://image2.suning.cn/uimg/cms/img/157199320847433454.png" alt=""></div>
+                <div class="box-input wocaonima">
+                    <span class="iconfont icon-fangdajing"></span>
+                    <span class="ziyuansu">手机满千减百</span>
+                </div>
+                <div class="head-flex"><img src="https://image1.suning.cn/uimg/cms/img/157199321817918653.png" alt=""></div>
+            </div>
+        </a>
         <div class="title">
             <div class="head-flex"><img src="https://image2.suning.cn/uimg/cms/img/157199320847433454.png" alt=""></div>
             <div class="title-img"><img src="https://image3.suning.cn/uimg/cms/img/157623112045989921.gif" alt=""></div>
@@ -15,22 +25,29 @@
                 <span class="ziyuansu">手机满千减百</span>
             </div>
         </a>
-        <div class=" three-box">
+        <div class="three-box">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="//oss.suning.com/aps/aps_learning/iwogh/2019/12/13/20/iwoghBannerPicture/48533f26f923408bb9253ca101b6e092.png?format=_is_1242w_610h" alt=""></div>
-                <div class="swiper-slide"><img src="//image.suning.cn/uimg/aps/material/157613996252153775.jpg?format=_is_1242w_610h" alt=""></div>
-                <div class="swiper-slide"><img src="https://image2.suning.cn/uimg/cms/img/157622500164401879.jpg?format=_is_1242w_610h" alt=""></div>
+                    <div class="swiper-slide"><img src="//oss.suning.com/aps/aps_learning/iwogh/2019/12/13/20/iwoghBannerPicture/48533f26f923408bb9253ca101b6e092.png?format=_is_1242w_610h" alt=""></div>
+                    <div class="swiper-slide"><img src="//image.suning.cn/uimg/aps/material/157613996252153775.jpg?format=_is_1242w_610h" alt=""></div>
+                    <div class="swiper-slide"><img src="https://image2.suning.cn/uimg/cms/img/157647636553822050.jpg?format=_is_1242w_610h" alt=""></div>
+                    <div class="swiper-slide"><img src="//oss.suning.com/aps/aps_learning/iwogh/2019/12/17/09/iwoghBannerPicture/b71a33e99f3d42fdb28db71e59a80a44.png?format=_is_1242w_610h" alt=""></div>
+                    <div class="swiper-slide"><img src="//oss.suning.com/aps/aps_learning/iwogh/2019/12/17/09/iwoghBannerPicture/3516d83e3bf14223977f14146faf2a65.png?format=_is_1242w_610h" alt=""></div>
+                    <div class="swiper-slide"><img src="//oss.suning.com/aps/aps_learning/iwogh/2019/12/17/09/iwoghBannerPicture/1daebea6f72a43188e6cd591ff80cc8b.png?format=_is_1242w_610h" alt=""></div>
+                    <div class="swiper-slide"><img src="//image.suning.cn/uimg/aps/material/157613996252153775.jpg?format=_is_1242w_610h" alt=""></div>
+                    <div class="swiper-slide"><img src="//oss.suning.com/aps/aps_learning/iwogh/2019/12/17/09/iwoghBannerPicture/372f475afe8843b58e481fecd5beae4f.png?format=_is_1242w_610h" alt=""></div>
                 </div>
-                <div class="swiper-pagination">111</div>
-                <div class="swiper-scrollbar"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
-       
         
         <div class="fourth">
             <myCompon></myCompon>
         </div>
+
+        <a href="https://cuxiao.m.suning.com/scms/csssuperqg.html?adTypeCode=1137&adId=https%3A%2F%2Flib.suning.com%2Fweex%2Fcsssuperqg.js%3FpageCode%3Dcsssuperqg" class="cgharu">
+            <img src="https://image1.suning.cn/uimg/cms/img/157647714478061112.gif" alt="">
+        </a>
 
         <div class="five-container">
             <a href="https://snvip.m.suning.com/newmem.html?bizCode=140000000010" class="five-1">
@@ -43,56 +60,70 @@
                 <img src="https://image3.suning.cn/uimg/cms/img/157330227372982455.gif" alt="">
             </a>
         </div>
-        <div class="six-container">
-            <div class="six-container">
-                <div class="six-one">
-                    <div class="six-title">
-                        <div class="six-font">限时抢购</div>
-                        <div class="six-num">
-                            <span class="yanse">01</span>
-                            <span>:</span>
-                            <span class="yanse">09</span>
-                            <span>:</span>
-                            <span class="yanse">22</span>
-                        </div>
-                    </div>
-                    <div class="mordern">潮流好物限时抢</div>
-                    <div class="nianzhong">
-                        <div class="suiyi">
-                            <div class="suiyi-img"><img src="//image3.suning.cn/uimg/nmps/MBLSPZT/100396761141622920picH_1_370x370.jpg" alt=""></div>
-                            <div>￥2.6</div>
-                        </div>
-                        <div class="suiyi">
-                            <div class="suiyi-img"><img src="//image1.suning.cn/uimg/nmps/MBLSPZT/100388163142339691picH_1_370x370.jpg" alt=""></div>
-                            <div>￥9.9</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="six-two"></div>
-            </div>
-            
+        <div class="bgc">
+            <HomeWork></HomeWork>
         </div>
+
+        <div class="bgc">
+            <div class="seven">
+                <div class="seven-1">
+                    <p>为你推荐</p>
+                    <p>精选频道</p>
+                </div>
+                <div class="seven-2">
+                    <a href="https://c.m.suning.com/shjdsm.html?productCode=000000000141100517&vendorId=0070237037&shopCode=0070237037&supplierCode=0070237037&productType=2&productName=%E8%8B%8F%E6%B3%8A%E5%B0%94%EF%BC%88SUPOR%EF%BC%89%20%E8%8B%8F%E6%B3%8A%E5%B0%94%E5%A5%B6%E9%94%85%20304%E4%B8%8D%E9%94%88%E9%92%A2%E5%B0%8F%E5%A5%B6%E9%94%85%E7%89%9B%E5%A5%B6%E9%94%85%E5%B0%8F%E9%94%85%20%E7%87%83%E6%B0%94%E7%81%B6%E7%94%B5%E7%A3%81%E7%82%89%E9%80%9A%E7%94%A8%E9%94%85%E5%85%B7%20ST16H3%2016CM&handwork=rec_13-47_2_A&contentId=&promotionInfo=&price=45.00&picVersion=2000&pictureUrl=//imgservice.suning.cn/uimg1/b2c/image/AK-dYxJGOuIjn_Bo6Tkkjg.jpg&productCode2=000000010676584909&vendorId2=0070239938&shopCode2=0070239938&supplierCode2=0070239938&productType2=2&productName2=%E8%BE%B0%E4%BD%B3%20%EF%BC%88Changer%EF%BC%89CR404-11-2000W%20%E7%94%B5%E7%83%AD%E6%B2%B9%E6%B1%80%E5%8F%96%E6%9A%96%E5%99%A8%E5%AE%B6%E7%94%A8%E7%94%B5%E6%9A%96%E5%99%A8%E5%AE%B6%E7%94%A8%E5%8A%9E%E5%85%AC%E5%AE%A4%E7%94%B5%E6%9A%96%E6%B0%94%E6%97%A0%E5%85%89%20%E7%81%B0%E7%99%BD%E8%89%B2&handwork2=rec_13-47_2_A&contentId2=&promotionInfo2=&price2=179.00&picVersion2=2000&pictureUrl2=//imgservice.suning.cn/uimg1/b2c/image/rrgHfhFUHZUkc2H_G1Yu_A.jpg">
+                        <div class="seven-1-1"><img src="https://image2.suning.cn/uimg/b2c/qrqm/0000000000000000000690105120_200x200.jpg?ver=2000&from=mobile" alt=""></div>
+                        <p>生活家电</p>
+                    </a>
+                    <a href="https://temai.m.suning.com/">
+                        <div class="seven-1-1"><img src="https://image1.suning.cn/uimg/cms/img/157164834630654824.png?from=mobile" alt=""></div>
+                        <p>苏宁Outlets</p>
+                    </a>
+                    <a href="https://c.m.suning.com/xpsf719.html">
+                        <div class="seven-1-1"><img src="https://image2.suning.cn/uimg/cms/img/157631818761353798.gif" alt=""></div>
+                        <p>新品首发</p>
+                    </a>
+                    <a href="https://c.m.suning.com/snsy.html">
+                        <div class="seven-1-1"><img src="https://image1.suning.cn/uimg/cms/img/157648993133624676.jpg?from=mobile" alt=""></div>
+                        <p>0元试用</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+            
     </div>
 </template>
 <script>
+    import Home from "./firstpage/zujian-one.vue"
     import Swiper from 'swiper';
-    import myCompon from "./home-1.vue"
+    import myCompon from "./firstpage/home-1"
     export default {
             data(){
-            return {}
+            return {
+            }
+            
         },
         components: {
-            myCompon
+            myCompon,
+            HomeWork:Home
         },
+
         mounted() {
             var mySwiper = new Swiper('.swiper-container', {
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                autoplay:true,
+                loop:true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
                 },
+
             });
             console.log(mySwiper);
-        }
+            var a = document.querySelector(".title-s").scrollHeight
+            console.log(a)
+        },
     }
 </script>
 
@@ -207,69 +238,7 @@
         height: 100%;
     }
 
-    .six-container {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        padding-top: 10px
-    }
-
-    .six-container>.six-one {
-        width: 50%;
-        height: 143px;
-        border-right: 1px solid #ccc;
-        padding-left: 20px
-    }
-
-    .six-title {
-        display: flex;
-        align-items: center;
-
-    }
-
-    .six-font {
-        font-size: 18px ;
-        color: #333;
-        font-weight: bold;
-        margin-right: 15px
-
-    }
-
-
-    .six-num {
-        display: flex;
-    }
-
-    .yanse {
-        background-color: rgb(255,204,0);
-        border-radius: 3px
-    }
-    .mordern {
-        color: #999;
-        font-size: 14px
-    }
-    .nianzhong {
-        display: flex;
-        width: 100%;
-        height: 80px;
-        justify-content: space-between;
-    }
-    .nianzhong .suiyi {
-        width: 50%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center
-    }
-
-    .nianzhong .suiyi .suiyi-img {
-        width: 66px;
-        height: 66px;
-    }
-    .nianzhong .suiyi .suiyi-img img{
-        width: 100%;
-        height: 100%;
-    }
+    
     .swiper-container {
         width: 90%;
         height: 150px;
@@ -280,24 +249,81 @@
         width: 100%;
         height: 100%;
     }
-    .swiper-pagination {
-        z-index: 99
+
+    .cgharu {
+        width: 100%;
+        height: 115px;
+        margin: 10px 0
     }
 
+    .cgharu img{
+        width: 100%;
+        height: 100%
+    }
 
+    .seven {
+        width: 90%;
+        margin: 0 auto;
+        height: 95px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #eee
+    }
 
+    .seven-1 {
+        width: 25%;
+        padding-left: 10px
 
+    }
 
+    .seven-1>p:first-child {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .seven-1>p:last-child {
+        color: #999;
+        margin-top: 5px
+    }
+    .seven-2 {
+        display: flex;
+        width: 75%;
+        justify-content: space-between
+    }
+    .seven-2>a {
+        width: 25%;
 
+    }
+    .bgc {
+        background: rgb(240,240,240)
+    }
 
+    .seven-1-1 {
+        width: 55px;
+        height: 55px;
+    }
 
+    .seven-1-1 img {
+        width: 100%;
+        height: 100%;
+    }
 
+    .small-fixed {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        display: none
+    }
 
+    .title-s {
+        display: flex;
+        width: 100%;
+        justify-content: space-between
+    }
 
-
-
-
-
+    .wocaonima {
+        width: 80%;
+    }
 
 
 

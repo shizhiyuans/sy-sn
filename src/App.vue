@@ -48,6 +48,7 @@ export default {
       footer {
         height: 55px;
         width: 100%;
+        flex-shrink: 0
       }
 
       a {
