@@ -86,7 +86,7 @@ export default {
         created(){
             this.countTime()
         },
-        methods:{
+        methods:{ 
             countTime: function() {
       //获取当前时间
         var date = new Date()

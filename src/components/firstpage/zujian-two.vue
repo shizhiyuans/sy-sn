@@ -1,18 +1,18 @@
 <template>
     <!-- <router-link to="/">222</router-link> -->
-    <div>
-        <div class="wang-1">
+    <div class="qiao">
+        <div class="wang-1" v-for="(item,index) in list" :key="index">
             <div class="wang-wang">
                 <div class="wang-1-img">
-                    <img src="https://image.suning.cn/uimg/b2c/qrqm/0000000000000000010546401320.jpg?format=_is_200w_200h_4e.webp" alt="">
+                    <img :src="item.images" alt="">
                 </div>
             </div>
             <div class="caotama">
                 <div class="wang-2 wanbg">
                     <span class="wang-2-1">人气榜</span>
                 </div>
-                <div class="wang-2">人气智能电视榜</div>
-                <div class="wang-2">爆卖4595件</div>
+                <div class="wang-2">{{item.name1}}</div>
+                <div class="wang-2">{{item.name2}}</div>
             </div>
            
         </div>
@@ -20,21 +20,52 @@
 </template>
 <script>
 export default {
-        data(){
+    data(){
         return {
+            index: 0,
+            timer:null,
+            count: 0,
             list:[
-                {images:""},
-                {name1:""},
-                {name2:""},
-                {name3:""},
+                {
+                    images:"//imgservice.suning.cn/uimg1/sniss/improve/av-CgfFxASmvYW2kwV4_Bg.jpg?format=_is_200w_200h_4e.webp",
+                    name1:"健康爱吃猫粮榜",
+                    name2:"卖爆217件"
+                },
+                {
+                    images:"//imgservice.suning.cn/uimg1/sniss/improve/jc20UMfmLjbSvwhN44Vgpw.jpg?format=_is_200w_200h_4e.webp",
+                    name1:"鲜嫩水产海鲜榜",
+                    name2:"卖爆3603件"
+                },
+                {
+                    images:"https://image.suning.cn/uimg/b2c/qrqm/0000000000000000000139833420.jpg?format=_is_200w_200h_4e.webp",
+                    name1:"慢炖溢香炖锅榜",
+                    name2:"今日热销爆款"
+                }
 
             ]
+        }
+    },
+    mounted(){
+        this.timer = setInterval(this.autoPlay, 2000);
+    },
+    methods: {
+        autoPlay(){
+            if (++this.index >= 3) {this.index = 0}
+                this.changeImg(this.index);
+        },
+        changeImg(suanle){
+            this.count = suanle * -136
+            document.querySelector('.qiao').style.marginTop = this.count + 'px'
         }
     }
 }
 </script>
 
 <style scoped>
+    .qiao {
+        width: 125px;
+        height: 136px;
+    }
     .wang-1 {
         width: 125px;
         height: 100%;
@@ -94,5 +125,9 @@ export default {
         border-radius: 10px;
     }
 
+    .qiao {
+        transition: all 1s
+    }
 
+    
 </style>

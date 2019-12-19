@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <main><router-view></router-view></main>
-    <footer><footer-bottom></footer-bottom></footer>
+    <keep-alive>
+        <router-view></router-view>
+    </keep-alive>
+    
   </div>
 </template>
 
 <script>
-import footer from "./components/footer.vue";
 export default {
   name: 'app',
   components: {
-    "footer-bottom":footer,
     
   },
   data(){
@@ -39,18 +39,6 @@ export default {
         display: flex;
         flex-direction: column
       }
-
-      main {
-        flex-grow: 1;
-        overflow: scroll
-      }
-
-      footer {
-        height: 55px;
-        width: 100%;
-        flex-shrink: 0
-      }
-
       a {
         text-decoration: none
       }
