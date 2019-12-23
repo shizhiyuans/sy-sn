@@ -7,23 +7,34 @@ import Myfive from "../components/five-page.vue";
 const routes = [
     {
         path: "/",
-        component: Myfirst
+        component: Myfirst,
+        meta: {
+            // keepAlive: true // 需要被缓存
+            isshow:true
+        }
     },
     {
         path: "/second",
-        component: second
+        component: second,
+        isshow:false
     },
     {
         path: "/third",
-        component: Mythird
+        component: Mythird,
+        // isshow:true
     },
     {
         path: "/four",
-        component: Myfour
+        component: Myfour,
+        meta: {
+            // keepAlive: true // 需要被缓存
+            isshow:true
+        }
     },
     {
         path: "/five",
-        component: Myfive
+        component: Myfive,
+        isshow:false
     }
 ];
 

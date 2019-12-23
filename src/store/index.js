@@ -6,7 +6,7 @@ Vue.use(Vuex)
 
 const store = new Vue.Store({
     state: {
-        
+        sum:0
     },
 
     mutations: {

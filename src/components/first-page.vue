@@ -166,7 +166,9 @@
                 </a>
             </div>
         </main>
-        <footer><footer-bottom></footer-bottom></footer>
+        <footer>
+
+        </footer>
     </div>
 </template>
 <script>
@@ -175,7 +177,6 @@
     import myCompon from "./firstpage/home-1.vue"
     import zujianTwo from "./firstpage/zujian-two.vue"
     import houguangxin from "./firstpage/hougaungxin.vue"
-    import footer from "./footer.vue"
     import lastLeft from "./firstpage/last-left.vue"
     import lastRight from "./firstpage/last-right.vue"
     export default {
@@ -198,7 +199,6 @@
             HomeWork:Home,
             zujianTwo,
             houguangxin,
-            "footer-bottom":footer,
             "last-left":lastLeft,
             "last-right":lastRight,
         },

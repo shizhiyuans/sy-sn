@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <keep-alive>
-        <router-view></router-view>
-    </keep-alive>
-    
+    <main>
+        <keep-alive>
+            <router-view></router-view>
+        </keep-alive>
+    </main>
+      <footer-bottom v-if="$route.meta.isshow"></footer-bottom>
   </div>
 </template>
 
 <script>
+import footer from "./components/footer.vue"
 export default {
   name: 'app',
   components: {
-    
+      "footer-bottom":footer,
   },
   data(){
     return{
@@ -41,5 +44,12 @@ export default {
       }
       a {
         text-decoration: none
+      }
+      footer {
+
+      }
+      main {
+        flex-grow: 1;
+        overflow: scroll
       }
 </style>

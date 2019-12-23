@@ -1,30 +1,31 @@
 <template>
     <!-- <router-link to="/">222</router-link> -->
     <div class="qiao">
-        <div class="wang-1" v-for="(item,index) in list" :key="index">
+    <transition name="slide" mode="in-out">
+        <div class="wang-1" :key="text.id">
             <div class="wang-wang">
                 <div class="wang-1-img">
-                    <img :src="item.images" alt="">
+                    <img :src="text.val.images" alt="">
                 </div>
             </div>
             <div class="caotama">
                 <div class="wang-2 wanbg">
                     <span class="wang-2-1">人气榜</span>
                 </div>
-                <div class="wang-2">{{item.name1}}</div>
-                <div class="wang-2">{{item.name2}}</div>
+                <div class="wang-2">{{text.val.name1}}</div>
+                <div class="wang-2">{{text.val.name2}}</div>
             </div>
-           
+
         </div>
+    </transition>
     </div>
 </template>
 <script>
 export default {
     data(){
         return {
-            index: 0,
-            timer:null,
-            count: 0,
+            animate: false,
+            number: 0,
             list:[
                 {
                     images:"//imgservice.suning.cn/uimg1/sniss/improve/av-CgfFxASmvYW2kwV4_Bg.jpg?format=_is_200w_200h_4e.webp",
@@ -45,19 +46,33 @@ export default {
             ]
         }
     },
+    computed: {
+        text() {
+            return {
+                id: this.number,
+                val: this.list[this.number]
+            };
+        }
+    },
     mounted(){
-        this.timer = setInterval(this.autoPlay, 2000);
+        this.startMove();
+
     },
     methods: {
-        autoPlay(){
-            if (++this.index >= 3) {this.index = 0}
-                this.changeImg(this.index);
-        },
-        changeImg(suanle){
-            this.count = suanle * -136
-            document.querySelector('.qiao').style.marginTop = this.count + 'px'
+            startMove() {
+      // eslint-disable-next-line
+    let timer = setTimeout(() => {
+        if (this.number === 2) {
+          this.number = 0;
+        } else {
+          this.number += 1;
         }
+        this.startMove();
+      }, 2000); // 滚动不需要停顿则将2000改成动画持续时间
     }
+    }
+
+
 }
 </script>
 
@@ -125,8 +140,15 @@ export default {
         border-radius: 10px;
     }
 
-    .qiao {
-        transition: all 1s
+    .slide-enter-active,
+    .slide-leave-active {
+        transition: all .5s linear;
+    }
+    .slide-enter {
+        transform: translateY(150px);
+    }
+    .slide-leave-to {
+        transform: translateY(-150px);
     }
 
     
