@@ -1,137 +1,217 @@
 <template>
-  <div class="an">
-    <div class="an-img">
-      <!-- <img src="../../assets/homepageimg/fast.jpg" alt /> -->
-    </div>
-    <div class="textbox">
-      <transition name="slide">
-        <div class="text" :key="text.id">
-          <span class="an-title">{{text.val.title}}</span>
-          <span class="an-content">{{text.val.content}}</span>
+    <!-- <router-link to="/ceshi">111</router-link> -->
+    <div class="big-box-container">
+        <div class="title">
+            <span>联系客服</span>
+            <span class="zhongjian">|</span>
+            <span>企业注册</span>
         </div>
-      </transition>
+        <div class="container">
+            <form action="get">
+                <div class="h2">欢迎登录苏宁易购</div>
+                <div class="inputBox">
+                    <input v-model="usermessage" type="text" id="inputszy" placeholder="请输入手机号">
+                </div>
+                <div class="inputBox">
+                    <input  v-model="passmessage" type="password" placeholder="请输入密码">
+                    <span class="input-span">忘记密码</span>
+                </div>
+                <div class="denglu" @click="dengluyanzheng">
+                    登录
+                </div>
+                <div class="zuihou">
+                    <a class="lasta" href="#">
+                        账号密码登录
+                    </a>
+                </div>
+            </form>
+        </div>
+        <div class="box">
+            <div class="wangling">
+                <p>其他方式登录</p>
+                <div class="QQ">
+                    <div class="yitong">
+                        <img src="https://res.suning.cn/project/passport/login/wapV8/images/icon_qq.png" alt="">
+                    </div>
+                    <div class="yitong">
+                        <img src="https://res.suning.cn/project/passport/login/wapV8/images/icon_epp.png" alt="">
+                    </div>
+                    <div class="yitong">
+                        <img src="https://res.suning.cn/project/passport/login/wapV8/images/icon_k.png" alt="">
+                    </div>
+                </div>
+                <div class="wechat">
+                    我同意
+                    《<a href="https://sale.suning.com/all/regProtocol/snyghyzc.html">苏宁易购会员章程</a>》
+                    《<a href="https://sale.suning.com/all/regProtocol/yfbxy.html">易付宝协议</a>》
+                </div>
+            </div>
+        </div>
+        
     </div>
-    <!-- <i class="line"></i>
-    <span class="more">更多</span> -->
-  </div>
 </template>
 <script>
 export default {
-  data() {
-    return {
-      animate: false,
-      textArr: [
-        { title: "推荐", content: "iPhone SE2曝光:经典ID+A13加加加加" },
-        { title: "HOT", content: "果粉有福了!iPhone Xs Max便宜便宜便宜" },
-        { title: "热门", content: "苹果怎么了!128G版iPhone已至已至" },
-        { title: "最新", content: "苹果新机更香了:性能提升更有更有" }
-      ],
-      number: 0
-    };
-  },
-  computed: {
-    text() {
-      return {
-        id: this.number,
-        val: this.textArr[this.number]
-      };
-    }
-  },
-  mounted() {
-    this.startMove();
-  },
-  methods: {
-    startMove() {
-      // eslint-disable-next-line
-      let timer = setTimeout(() => {
-        if (this.number === 2) {
-          this.number = 0;
-        } else {
-          this.number += 1;
+    data(){
+        return {
+            usermessage:"",
+            passmessage:"",
+
         }
-        this.startMove();
-      }, 2000); // 滚动不需要停顿则将2000改成动画持续时间
-    }
-  }
-};
+    },
+    methods: {
+        dengluyanzheng(){
+            if(this.$store.state.username == this.usermessage && this.$store.state.password == this.passmessage) {
+                this.$store.commit("change")
+                this.$router.push({path:"/six"})
+                localStorage.setItem("user",JSON.stringify(this.usermessage))
+                localStorage.setItem("pwd",JSON.stringify(this.passmessage));
+                this.$store.commit("gaibian");
+                this.$store.commit("clicks");
+            }else{
+                console.log("请输入正确的账号密码")
+            }
+        }
+    },
+
+}
 </script>
 
 <style scoped>
-.an {
-  width: 94.6%;
-  height: 3.69%;
-  margin: 0 auto;
-  border-radius: 5px;
-  padding: 0px 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between
-}
-.an-title {
-  padding: 0px 6px 0px 8px;
-  color: #f23030;
-}
-.an-img {
-  width: 21.56%;
-  height: 53.3%;
-  flex-shrink: 0;
-}
-.an-img > img {
-  width: 100%;
-  height: 100%;
-}
+    .big-box-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .title {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: flex-end;;
+        padding: 7px 15px;
+        color: #222;
+        align-items: center;
+    }
+    .title .zhongjian {
+        color: #ccc;
+        margin: 0 15px
+    }
+    .title span {
+        font-size: 13px;
+    }
+    .container {
+        width: 100%;
+        height: 300px;
+        padding: 0 41px;
+        margin: 30px 0 0 0 ;
+    }
+    .container .h2 {
+        font-size: 20px;
+        color: #222;
+        margin-bottom: 20px;
+    }
+    .inputBox {
+        width: 100%;
+        height: 50px;
+        margin: 33px 0 0 0;
+        border-bottom: 1px solid #ccc;
+        padding-top: 10px;
+        display: flex;
+    }
+    .input-span {
+        width: 100px;
+        color: #333;
+        font-size: 14px;
+    }
+    .inputBox input {
+        width: 100%;
+        height: 36px;
+        border: none;
+        color: #ccc;
+        font-size: 16px;
+        outline: none 
+    }
+    .inputBox input[type="text"]:focus,.inputBox input[type="password"]:focus{
+        border-left: #ffcc00 1px solid;
+    }
+    .szy_box {
+        width: 100%;
+        height: 43px;
+        margin-top: 16px;
+        display: flex;
+    }
 
-ul {
-  width: 80%;
-  height: 30px ;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  /* border: 1px solid blue */
-}
+    label {
+        border-bottom: 1px solid #ccc;
+        width: 43px;
+        height: 43px;
+        margin-right: 15px;
+    }
 
+    .lable {
+        width: 110px;
+        height: 43px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #ccc;
+        text-align: center;
+        line-height: 43px;;
+    }
+    .denglu {
+        width: 100%;
+        height: 50px;
+        color: #222;
+        background: #ffcc00;
+        margin-top: 30px;
+        font-size: 19px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 10px;
+    }
+    .lasta {
+        display: inline-block;
+        font-size: 16px;
+        color: #333;
+        margin-top: 24px;
+        text-align: center;
+    }
+    .zuihou {
+        width: 100%;
+        text-align: center;
+    }
 
-.text {
+    .wangling {
+        width: 265px;
+        height: 102px;
+        margin: 250px auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column
+    }
+    .box {
+        width: 100%;
+    }
+    .QQ {
+        width: 100%;
+        height: 36px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+    }
+    .QQ .yitong {
+        width: 36px;
+        height: 36px;
+        margin-top: 15px;
+    }
+    .QQ .yitong img {
+        width: 100%;
+        height: 100%;
+    }
 
-   position: absolute; 
-   width: 95%;
-  height:30px;
-  overflow: hidden;
-  /* border: 1px solid red; */
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-size: 12px;
-  line-height: 30px;
-  
-    
-}
-.an-content{
-    width: 150px
-}
-.slide-enter-active,
-.slide-leave-active {
-  transition: all 0.5s linear;
-}
-.slide-enter {
-  transform: translateY(30px);
-}
-.slide-leave-to {
-  transform: translateY(-30px);
-}
-
-.line{
-  background: #ececec;
-    width: .05rem;
-    height: .8rem;
-    display: inline-block;
-    margin-right: .25rem;
-    vertical-align: middle;
-}
-
-.more{
-  font-size: 12px;
-  flex-shrink: 0;
-  margin-right: 10px
-}
+    .wechat a {
+        color: #101010;
+        text-decoration: underline
+    }
 </style>

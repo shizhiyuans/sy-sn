@@ -5,7 +5,7 @@
             <span>购物车</span>
         </div>
         <div class="two-box">
-            <div class="box-1">
+            <div class="box-1" v-if="this.$store.state.say == '1'">
                 <span class="box-1-1">登陆后同步电脑与手机购物车的商品</span>
                 <span class="box-1-2">去登录</span>
             </div>
@@ -16,6 +16,9 @@
                 <div class="box-text">购物车还是空的，快来挑选好货吧</div>
                 <div class="box-text-t">去逛逛</div>
             </div>
+        </div>
+        <div class="last">
+            没有更多啦
         </div>
     </div>
 </template>
@@ -110,5 +113,9 @@ export default {
         border-radius: 5px;
         background: #fff;
         text-align: center;
+    }
+    .last {
+        text-align: center;
+        color: #666;
     }
 </style>

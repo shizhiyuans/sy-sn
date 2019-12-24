@@ -5,7 +5,10 @@
             <router-view></router-view>
         </keep-alive>
     </main>
-      <footer-bottom v-if="$route.meta.isshow"></footer-bottom>
+      <keep-alive>
+          <footer-bottom v-if="$route.meta.isshow"></footer-bottom>
+      </keep-alive>
+      
   </div>
 </template>
 
@@ -18,9 +21,21 @@ export default {
   },
   data(){
     return{
-
+      a:""
     }
-  }
+  },
+    mounted () {
+      if(localStorage.getItem("path")){
+        this.$store.state.path = JSON.parse(localStorage.getItem("path"))
+      }
+      if(localStorage.getItem("suiyi")){
+        this.$store.state.say = localStorage.getItem("suiyi")
+      }
+      if(localStorage.getItem("see")){
+        this.$store.state.see = JSON.parse(localStorage.getItem("see"))
+      }
+        
+    }
 }
 </script>
 
@@ -50,6 +65,6 @@ export default {
       }
       main {
         flex-grow: 1;
-        overflow: scroll
+        overflow: scroll;
       }
 </style>

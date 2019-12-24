@@ -2,8 +2,8 @@
     <div class="footer">
         <div class="divone"  @click="clickOne">
             <span class="foot-img">
-                <img v-if="see == '1'" src="https://image2.suning.cn/uimg/cms/img/157543975265772267.png?from=mobile" alt="">
-                <img v-if="see == '2'"  src="//image.suning.cn/uimg/cms/img/157105696599538235.png" alt="">
+                <img v-if="this.$store.state.see =='1'" src="https://image2.suning.cn/uimg/cms/img/157543975265772267.png?from=mobile" alt="">
+                <img v-if="this.$store.state.see != '1'"  src="//image.suning.cn/uimg/cms/img/157105696599538235.png" alt="">
             </span>
             <span>猜你喜欢</span>
         </div>
@@ -21,14 +21,15 @@
         </a>
         <div class="divone"  @click="clickFour">
             <span class="foot-img">
-                <img v-if="see == '1'" src="https://image2.suning.cn/uimg/cms/img/157543979328589256.png?from=mobile" alt="">
-                <img v-if="see == '2'" src="//image.suning.cn/uimg/cms/img/157105763151658248.png" alt="">
+                <img v-if="this.$store.state.see !='2'" src="https://image2.suning.cn/uimg/cms/img/157543979328589256.png?from=mobile" alt="">
+                <img v-if="this.$store.state.see == '2'" src="//image.suning.cn/uimg/cms/img/157105763151658248.png" alt="">
             </span>
             <span>购物车</span>
         </div>
         <div class="divone"  @click="clickFive">
             <span class="foot-img">
-                <img src="https://image1.suning.cn/uimg/cms/img/157543980229048220.png?from=mobile" alt="">
+                <img  v-if="this.$store.state.see !='3'" src="https://image1.suning.cn/uimg/cms/img/157543980229048220.png?from=mobile" alt="">
+                <img  v-if="this.$store.state.see == '3'" src="//image.suning.cn/uimg/cms/img/157105768594001788.png" alt="">
             </span>
             <span>我的易购</span>
         </div>
@@ -39,24 +40,25 @@
 export default {
     data(){
         return {
-            see:"1",
         }
     },
     methods:{
         clickOne(){
-            this.see = '1'
             this.$router.push({ path: "/"});
+            this.$store.commit("clickO")
         },
         clickTwo(){
             this.$router.push({ path: "/second"});
-            // document.querySelector('.footer').style.display = "none"
         },
         clickFour(){
-            this.see = '2'
             this.$router.push({ path: "/four"});
+            this.$store.commit("clickt")
         },
         clickFive(){
-            this.$router.push({ path: "/five"});
+            this.$router.push({ path: this.$store.state.path});
+            if(this.$store.state.path == 'six') {
+                this.$store.commit("clicks");
+            }
         }
     }
 }

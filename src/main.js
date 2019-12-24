@@ -4,11 +4,10 @@ import VueRouter from "vue-router"
 Vue.config.productionTip = false
 import router from "./router/index.js"
 import 'swiper/dist/css/swiper.css';
-// import axios from 'axios'
-// import VueAxios from 'vue-axios'
+import store from "./store/index.js"
 Vue.use(VueRouter)
-// Vue.use(VueAxios, axios)
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')

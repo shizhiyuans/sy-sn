@@ -161,14 +161,11 @@
                 </div>
 
 
-                <a href="https://passport.suning.com/ids/login?service=https://aq.suning.com/asc/auth?targetUrl=https://m.suning.com/&loginTheme=wap_new" class="bottoms">
+                <div v-if="this.$store.state.say == '1'" @click="tiaofive" class="bottoms">
                     <img src="https://image1.suning.cn/uimg/cms/img/157588645542963955.png" alt="">
-                </a>
+                </div>
             </div>
         </main>
-        <footer>
-
-        </footer>
     </div>
 </template>
 <script>
@@ -229,6 +226,9 @@
                         document.querySelector(".small-fixed").style.display = "none"
                     }
                 }
+            },
+            tiaofive() {
+                this.$router.push({path:"/five"})
             }
             
         }
@@ -687,8 +687,8 @@
     .bottoms {
         width: 100%;
         height: 50px;
-        display: inline-block;
-        position: fixed;bottom: 55px;
+        position: fixed;
+        bottom: 55px;
     }
     .bottoms img{
         width: 100%;
