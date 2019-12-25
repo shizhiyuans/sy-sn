@@ -4,33 +4,79 @@
         <div class="title">
             <span>购物车</span>
         </div>
-        <div class="two-box">
-            <div class="box-1" v-if="this.$store.state.say == '1'">
-                <span class="box-1-1">登陆后同步电脑与手机购物车的商品</span>
-                <span class="box-1-2">去登录</span>
-            </div>
-            <div class="box-2">
-                <div class="box-img">
-                    <img src="//oss.suning.com/vss/activity/wximg/cart/sn-cart-empty.png" alt="">
+        <div v-if="this.$store.state.num == '0'">
+            <div class="two-box">
+                <div class="box-1" v-if="this.$store.state.say == '1'">
+                    <span class="box-1-1">登陆后同步电脑与手机购物车的商品</span>
+                    <span class="box-1-2">去登录</span>
                 </div>
-                <div class="box-text">购物车还是空的，快来挑选好货吧</div>
-                <div class="box-text-t">去逛逛</div>
+                <div class="box-2">
+                    <div class="box-img">
+                        <img src="//oss.suning.com/vss/activity/wximg/cart/sn-cart-empty.png" alt="">
+                    </div>
+                    <div class="box-text">购物车还是空的，快来挑选好货吧</div>
+                    <div class="box-text-t">去逛逛</div>
+                </div>
+            </div>
+            <div class="last">
+                没有更多啦
             </div>
         </div>
-        <div class="last">
-            没有更多啦
+        <div v-if="this.$store.state.num != '0'">
+            <div class="container">
+                <div class="container-title">
+                    <div class="container-title-a">
+                        <span class="iconfont icon-gou"></span>
+                        <span>苏宁自营</span>
+                    </div>
+                    <div class="container-title-b">免运费</div>
+                </div>
+                <div class="layout" v-for="(item,index) in this.$store.state.arr" :key="index">
+                    <div class="layout-1 iconfont icon-gou"></div>
+                    <div class="layout-2">
+                        <div class="layout-2-img">
+                            <img :src="item.images" alt="">
+                        </div>
+                        <div class="layout-2-con">
+                            <p>丽兹葵花籽油 食用油 物理压榨 乌克兰原装进口 5L</p>
+                            <div class="NUMber">
+                                <div>
+                                    <span class="soooos">￥</span>
+                                    <span class="colorsa">59</span>
+                                    <span class="soooos">.9</span>
+                                </div>
+                                <div class="Number-2">
+                                    <span class="Number-span-1">-</span>
+                                    <span class="Number-span-2">{{this.$store.state.linshinum}}</span>
+                                    <span class="Number-span-3">+</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="layout-3"></div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 <script>
 
 export default {
-        data(){
+    data(){
         return {
         }
     },
-        components: {
+    components: {
+    
+    },
+    methods: {
+    },
+    computed:{
+        list(){
+            return this.$store.state.arr
         }
+    }
 }
 </script>
 
@@ -118,4 +164,146 @@ export default {
         text-align: center;
         color: #666;
     }
+    .container {
+        width: 95%;
+        padding: 14px;
+        background: #fff;
+        margin: 10px ;
+    }
+    .container-title {
+        width: 100%;
+        height: 45px;
+        padding: 13px 13px 10px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .container-title-a span:first-child{
+        color:rgb(255,204,0);
+
+    }
+    .container-title-a span:last-child{
+        color: #333;
+        font-size: 14px;
+        margin-left: 15px;
+        
+    }
+    .container-title-b {
+        color: #FF6600;
+        font-size: 12px;
+    }
+    .layout {
+        width: 100%;
+        height: 133px;
+        padding: 0 13px 20px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .layout-1 {
+        width: 33px;
+        height: 100px;
+        color:rgb(255,204,0);
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+    }
+    .layout-2 {
+        flex-grow: 1;
+        display: flex;
+    }
+    .layout-2-img {
+        width: 100px;
+        height: 100px;
+    }
+    .layout-2-img img {
+        width: 100%;
+        height: 100%;
+    }
+    .layout-2-con {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .Number-2 {
+        width: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        padding: 0 5px;
+    }
+    .Number-span-1 {
+        width: 20px;
+        height: 20px;
+        background: #f4f4f4;
+        color: #CACACA;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 20px;
+        font-size: 18px;
+    }
+    .Number-span-2 {
+        width: 43px;
+        height: 24px;
+        padding: 0 2px;
+        text-align: center;
+        line-height: 24px;
+    }
+    .Number-span-3 {
+        width: 20px;
+        height: 20px;
+        background: #f4f4f4;
+        color: #333;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 20px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .NUMber {
+        display: flex;
+        justify-content: space-between;
+    }
+    .colorsa {
+        color: #ff4422;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .soooos {
+        color: #ff4422;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>

@@ -118,8 +118,8 @@
                     <div class="box-li-img">
                         <img src="//imgservice.suning.cn/uimg1/b2c/image/2GMUZgZwUd_iIC-03Ow-6Q.jpg?from=mobile" alt="">
                     </div>
-                    <div>爱国者（aigo）32GB USB2.0 UDP系列 迷你金属U盘 U268 高速车载U盘 银色</div>
-                    <div><span>￥</span><span>28</span><span>.00</span></div>
+                    <div class="box-li-container">爱国者（aigo）32GB USB2.0 UDP系列 迷你金属U盘 U268 高速车载U盘 银色</div>
+                    <div class="box-li-bottom"><span>￥</span><span>28</span><span>.00</span></div>
                 </div>
 
             </div>
@@ -471,10 +471,33 @@ export default {
         height: 100%;;
     }
 
+    .box-li-container {
+        color: #222;
+        width: 90%;
+        font-size: 14px;
+        font-weight: bold;
+        height: 42px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        /* white-space: nowrap; */
+    }
+    .box-li-bottom {
+        margin-top: 20px;
+        width: 100%;
+        color: #FF4422;
+        padding-left: 10px;
 
-
-
-
+    }
+    .box-li-bottom span:nth-child(1){
+        font-size: 12px;
+    }
+    .box-li-bottom span:nth-child(2){
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .box-li-bottom span:nth-child(3){
+        font-size: 14px;
+    }
 
 
 

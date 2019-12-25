@@ -25,6 +25,7 @@
                 <img v-if="this.$store.state.see == '2'" src="//image.suning.cn/uimg/cms/img/157105763151658248.png" alt="">
             </span>
             <span>购物车</span>
+            <span class="dingwei"  v-if="this.$store.state.see !='2'&&this.$store.state.num !=0" >{{this.$store.state.num}}</span>
         </div>
         <div class="divone"  @click="clickFive">
             <span class="foot-img">
@@ -83,8 +84,18 @@ export default {
         justify-content: center;
         text-align: center;
         flex-direction: column;
+        position: relative;
     }
-
+    .dingwei {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        background: #DD0000;
+        color: white;
+        top: 0;
+        right: 20px;
+    }
     .foot-img {
         width: 30px;
         height: 30px;
