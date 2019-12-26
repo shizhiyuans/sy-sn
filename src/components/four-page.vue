@@ -32,7 +32,7 @@
                     <div class="container-title-b">免运费</div>
                 </div>
                 <div class="layout" v-for="(item,index) in list" :key="index">
-                    <div class="layout-1"><input class="inputed" @click="inputClick(index)" type="checkbox"></div>
+                    <div class="layout-1"><input class="inputed" v-model="selectedList" :value="item" @click="inputClick(index)" type="checkbox"></div>
                     <div class="layout-2">
                         <div class="layout-2-img">
                             <img :src="item.images" alt="">
@@ -59,7 +59,7 @@
             </div>
             <div class="settlement">
                 <div class="settlement-1">
-                    <div><input @click="inputs" class="inpussss" type="checkbox"></div>
+                    <div><input @click="inputs" v-model="selectAll" class="inpussss" type="checkbox"></div>
                     <div class="settlement-zi">全部</div>
                 </div>
                 <div class="settlement-2">
@@ -67,13 +67,13 @@
                         <div class="lujiajia-1">
                             <span>合计：</span>
                             <span class="color-color">￥</span>
-                            <span class="zuidade color-color">{{numberPrice}}</span>
+                            <span class="zuidade color-color">{{count}}</span>
                             <span class="color-color">.00</span>
                         </div>
                         <div>含运费：￥0</div>
                     </div>
                     <div class="lujiajia-2">
-                        去结算（{{number}}）
+                        去结算（{{selectedList.length}}）
                     </div>
                 </div>
             </div>
@@ -87,19 +87,45 @@ export default {
         return {
             numberPrice:0,
             number:0,
+            selectedList:[],
+            count:0,
+            selectAll: []
         }
     },
     components: {
         
     },
+    watch: {
+        selectedList (newVal) {
+            console.log(newVal);
+            this.getPrice();
+        },
+        selectAll (newVal) {
+            console.log(newVal);
+            if (newVal.length) {
+                this.selectedList = this.list;
+            } else {
+                this.selectedList = [];
+            }
+        }
+    },
     methods: {
+        getPrice () {
+            let count = 0;
+            this.selectedList.forEach((item) => {
+                count += parseInt(item.price1)*  parseInt(item.number);
+            });
+            this.count = count;
+        },
         wanglingjian(index){
             this.$store.commit("wanglingjian",index)
-            this.inputClick(index)
+            // this.inputClick(index)
+            this.getPrice();
         },
         wanglingjia(index){
             this.$store.commit("wanglingjia",index)
-            this.inputClick(index)
+            // this.inputClick(index)
+            this.getPrice();
         },
         inputClick(index){
             let ars = document.querySelectorAll('.inputed')
@@ -122,21 +148,22 @@ export default {
 
         },
         inputs(){
-            let ars = document.querySelectorAll('.inputed')
-            let inputeds = document.querySelector('.inpussss')
-            if(inputeds.checked == true) {
-                for(let i=0;i<ars.length;i++){
-                    ars[i].checked = true
-                    this.numberPrice += this.list[i].number * this.list[i].price1
-                    this.number += this.list[i].number 
-                }
-            }else {
-                for(let i=0;i<ars.length;i++){
-                    ars[i].checked = false
-                    this.numberPrice =0
-                    this.number = 0
-                }
-            }
+            this
+            // let ars = document.querySelectorAll('.inputed')
+            // let inputeds = document.querySelector('.inpussss')
+            // if(inputeds.checked == true) {
+            //     for(let i=0;i<ars.length;i++){
+            //         ars[i].checked = true
+            //         this.numberPrice += this.list[i].number * this.list[i].price1
+            //         this.number += this.list[i].number 
+            //     }
+            // }else {
+            //     for(let i=0;i<ars.length;i++){
+            //         ars[i].checked = false
+            //         this.numberPrice =0
+            //         this.number = 0
+            //     }
+            // }
             
         }
 

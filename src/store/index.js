@@ -138,8 +138,24 @@ const store = new Vuex.Store({
             state.num +=state.obj.number
             localStorage.setItem("num",JSON.stringify(state.num))
 
-                state.arr.push(state.obj)
-                console.log(111)
+                let titleList = state.arr.map(({title1}) => title1);
+                let has;
+                if (titleList.includes(state.obj.title1)) {
+                    has = true;
+                } else{
+                    has = false;
+                }
+                console.log(has, 'ddd');
+                if (has) {
+                    state.arr.forEach(item => {
+                        if (item.title1 == state.obj.title1) {
+                            item.number += parseInt(state.obj.number)
+                        }
+                    })
+                } else {
+                    state.arr.push(state.obj)
+                }
+                
                 localStorage.setItem("arr",JSON.stringify(state.arr))
 
             // state.arr.push(state.obj)
