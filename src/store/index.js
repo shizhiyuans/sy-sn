@@ -174,12 +174,14 @@ const store = new Vuex.Store({
                 state.arr[index].number--
                 localStorage.setItem("arr",JSON.stringify(state.arr))
                 state.num--;
+                localStorage.setItem("num",JSON.stringify(state.num))
             }
         },
         wanglingjia(state,index){
                 state.arr[index].number++
                 localStorage.setItem("arr",JSON.stringify(state.arr))
                 state.num++;
+                localStorage.setItem("num",JSON.stringify(state.num))
                 console.log(state.num)
         },
 

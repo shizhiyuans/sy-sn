@@ -115,7 +115,7 @@ export default {
                 if(ars[index].checked == true){
                     this.numberPrice += this.list[index].number * this.list[index].price1;
                     this.number += this.list[index].number;
-                }else{
+                }else if(this.$store.state.arr[index].number>1){
                     this.numberPrice -= this.list[index].number * this.list[index].price1;
                     this.number -= this.list[index].number;
                 }
