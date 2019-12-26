@@ -11,8 +11,8 @@ const store = new Vuex.Store({
         path:"five",
         say:'1',
         see:"1",
-        linshinum:"1",
-        num:"0",
+        // linshinum:"1",
+        num:0,
         list:[
             {
                 images:"//imgservice.suning.cn/uimg1/b2c/image/xqUJtMLxt8bjoM44QFWjeA.jpg?format=_is_300w_300h_4e.webp",
@@ -116,27 +116,34 @@ const store = new Vuex.Store({
             state.see = '3';
             localStorage.setItem("see",JSON.stringify(state.see))
         },
-        zengjia(state){
-            state.linshinum++;
-            state.obj.number++;
-        },
-        jianshao(state){
-            if(state.num>0){
-                state.linshinum--;
-                state.obj.number++;
-        }
-        },
-        cunzhu(state) {
-            state.num =state.linshinum
-            localStorage.setItem("num",JSON.stringify(state.num))
-        },
+        // zengjia(state){
+        //     state.linshinum++;
+        // },
+        // jianshao(state){
+        //     if(state.num>0){
+        //     state.linshinum--;
+        // }
+        // },
+        // cunzhu(state) {
+        //     state.obj.number =  state.linshinum
+        //     state.num +=state.obj.number
+        //     localStorage.setItem("num",JSON.stringify(state.num))
+        //     if(state.arr.indexOf(state.obj)<0){
+        //         state.arr.push(state.obj)
+        //         localStorage.setItem("arr",JSON.stringify(state.arr))
+        //     }
+        //     state.linshinum = "1"
+        // },
         jiarugouwuche(state) {
-            if(state.arr.indexOf(state.obj)<0){
-                state.arr.push(state.obj)
-                // localStorage.setItem("arr",JSON.stringify(state.arr))
-                console.log(state.arr)
-            }
+            state.num +=state.obj.number
+            localStorage.setItem("num",JSON.stringify(state.num))
 
+                state.arr.push(state.obj)
+                console.log(111)
+                localStorage.setItem("arr",JSON.stringify(state.arr))
+
+            // state.arr.push(state.obj)
+            // localStorage.setItem("arr",JSON.stringify(state.arr))
         },
         houguanxin(state,index) {
                 state.obj = {               
@@ -161,7 +168,21 @@ const store = new Vuex.Store({
                 number:1
             },
             localStorage.setItem("obj",JSON.stringify(state.obj))
-        }
+        },
+        wanglingjian(state,index){
+            if(state.arr[index].number>1){
+                state.arr[index].number--
+                localStorage.setItem("arr",JSON.stringify(state.arr))
+                state.num--;
+            }
+        },
+        wanglingjia(state,index){
+                state.arr[index].number++
+                localStorage.setItem("arr",JSON.stringify(state.arr))
+                state.num++;
+                console.log(state.num)
+        },
+
     }
 
 })

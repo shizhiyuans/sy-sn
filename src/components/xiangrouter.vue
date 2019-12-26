@@ -1,14 +1,14 @@
 <template>
     <div class="container">
         <div class="big-img">
-            <img :src="this.$store.state.obj.images" alt="">
+            <img :src="obj.images" alt="">
             <div @click="goFUn" class="iconfont icon-ziyuan postiongs"></div>
         </div>
         <div class="big-second">
             <div class="product">
                 <span class="product-color">￥</span>
-                <span class="product-color">{{this.$store.state.obj.price1}}</span>
-                <span class="product-color">{{this.$store.state.obj.price2}}</span>
+                <span class="product-color">{{obj.price1}}</span>
+                <span class="product-color">{{obj.price2}}</span>
                 <span class="zuihouwoye">￥71.40</span>
             </div>
             <div class="VIP-mode">
@@ -20,8 +20,8 @@
             </div>
             <div class="product-title">
                 <div class="product-title-1">
-                    <span>{{this.$store.state.obj.title2}}</span>
-                    <span>飞利浦(Philips) 电吹风HP8120 小巧易携带 1200W轻柔吹干 3档可调风速冷热风护发 恒温护发</span>
+                    <span>{{obj.title2}}</span>
+                    <span>{{obj.title1}}</span>
                 </div>
                 <div class="product-title-2">
                     <span class="iconfont icon-guanzhu"></span>
@@ -160,9 +160,9 @@
         <div class="fixed-fix">
             <div class="fix-day"><span class="iconfont icon-kefu"></span><span>客服</span></div>
             <div class="fix-day"><span class="iconfont icon-dianpu"></span><span>店铺</span></div>
-            <div class="fix-day xiaojiba">
+            <div @click="chuansongmen" class="fix-day xiaojiba">
                 <span class="iconfont icon-gouwuche1"></span><span>购物车</span>
-                <span class="bianhua">{{this.$store.state.num}}</span>
+                <span class="bianhua" v-if="num !=0">{{this.$store.state.num}}</span>
             </div>
             <div @click="xianshi" class="buynoW-1">立即购买</div>
             <div @click="xianshi"  class="buynoW-2">加入购物车</div>
@@ -171,12 +171,12 @@
             <div class="zhezhao-container">
                 <div class="cover-head">
                     <div class="cover-img">
-                        <img :src="this.$store.state.obj.images" alt="">
+                        <img :src="obj.images" alt="">
                     </div>
                     <div class="cover-main">
-                        <p class="cover-main-1"><span>￥</span><span>{{this.$store.state.obj.price1}}</span><span>{{this.$store.state.obj.price2}}</span></p>
+                        <p class="cover-main-1"><span>￥</span><span>{{obj.price1}}</span><span>{{obj.price2}}</span></p>
                         <p class="cover-main-2">商品编码:107025567</p>
-                        <p class="cover-main-3">飞利浦(Philips) 电吹风HP8120 小巧易携带 1200W轻柔吹干 3档可调风速冷热风护发 恒温护发</p>
+                        <p class="cover-main-3">{{obj.title1}}</p>
                     </div>
                     <div @click="quxiao" class="iconfont icon-chacha">
                     </div>
@@ -199,9 +199,11 @@
                     <div class="Number">
                         <div class="Number-1">数量</div>
                         <div class="Number-2">
-                            <span @click="jianshao" class="Number-span-1">-</span>
-                            <span class="Number-span-2">{{this.$store.state.linshinum}}</span>
-                            <span @click="zengjia"  class="Number-span-3">+</span>
+                            <!-- <span @click="jianshao" class="Number-span-1">-</span> -->
+                            <span class="Number-span-1">-</span>
+                            <span class="Number-span-2">{{1}}</span>
+                            <!-- <span @click="zengjia"  class="Number-span-3">+</span> -->
+                            <span class="Number-span-3">+</span>
                         </div>
                     </div>
                     <div class="fout-cells">
@@ -209,7 +211,8 @@
                     </div>
                 </div>
                 <div class="overa-action">
-                    <div @click="cunchu" class="overa-action-1">立即购买</div>
+                    <!-- <div @click="cunchu" class="overa-action-1">立即购买</div> -->
+                    <div @click="jiarugouwuche" class="overa-action-1">立即购买</div>
                     <div @click="jiarugouwuche" class="overa-action-2">加入购物车</div>
                 </div>
             </div>
@@ -259,20 +262,34 @@ export default {
         },
         xianshi(){
             document.querySelector('.zhezhaoceng').style.display = "block"
+            document.querySelector('.zhezhao-container').style.height = "400px"
         },
-        zengjia(){
-            this.$store.commit("zengjia");
-        },
-        jianshao(){
-            this.$store.commit("jianshao")
-        },
-        cunchu(){
-            this.$store.commit("cunzhu");
-            document.querySelector('.zhezhaoceng').style.display = "none"
-        },
+        // zengjia(){
+        //     this.$store.commit("zengjia");
+        // },
+        // jianshao(){
+        //     this.$store.commit("jianshao")
+        // },
+        // cunchu(){
+        //     this.$store.commit("cunzhu");
+        //     document.querySelector('.zhezhaoceng').style.display = "none"
+        // },
         jiarugouwuche(){
             this.$store.commit("jiarugouwuche");
+            console.log(this.$store)
             document.querySelector('.zhezhaoceng').style.display = "none"
+
+        },
+        chuansongmen(){
+            this.$router.push({path:"/four"})
+        }
+    },
+    computed:{
+        num(){
+            return this.$store.state.num
+        },
+        obj(){
+            return this.$store.state.obj
 
         }
     }
@@ -757,11 +774,13 @@ export default {
     }
     .zhezhao-container {
         width: 98%;
-        height: 400px;
+        /* height: 400px; */
+        height: 0px;
         background: #fff;
         position: fixed;
         bottom: 5px;
         border-radius: 8px;
+        transition: all 2s
         /* overflow: scroll */
     }
     .cover-head {

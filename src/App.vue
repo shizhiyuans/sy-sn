@@ -38,11 +38,12 @@ export default {
         this.$store.state.num = JSON.parse(localStorage.getItem("num"))
       }
       if(localStorage.getItem("arr")){
-        // this.$store.state.arr = JSON.parse(localStorage.getItem("arr"))
+        this.$store.state.arr = JSON.parse(localStorage.getItem("arr"))
       }
       if(localStorage.getItem("obj")){
         this.$store.state.obj = JSON.parse(localStorage.getItem("obj"))
       }
+
     }
 }
 </script>
