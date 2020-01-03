@@ -167,7 +167,7 @@
             <div @click="xianshi" class="buynoW-1">立即购买</div>
             <div @click="xianshi"  class="buynoW-2">加入购物车</div>
         </div>
-        <div class="zhezhaoceng">
+        <div v-show="isShow" class="zhezhaoceng">
             <div class="zhezhao-container">
                 <div class="cover-head">
                     <div class="cover-img">
@@ -199,11 +199,9 @@
                     <div class="Number">
                         <div class="Number-1">数量</div>
                         <div class="Number-2">
-                            <!-- <span @click="jianshao" class="Number-span-1">-</span> -->
-                            <span class="Number-span-1">-</span>
-                            <span class="Number-span-2">{{1}}</span>
-                            <!-- <span @click="zengjia"  class="Number-span-3">+</span> -->
-                            <span class="Number-span-3">+</span>
+                            <span @click="jianshao" class="Number-span-1">-</span>
+                            <span class="Number-span-2">{{obj.number}}</span>
+                            <span @click="zengjia"  class="Number-span-3">+</span>
                         </div>
                     </div>
                     <div class="fout-cells">
@@ -211,7 +209,6 @@
                     </div>
                 </div>
                 <div class="overa-action">
-                    <!-- <div @click="cunchu" class="overa-action-1">立即购买</div> -->
                     <div @click="jiarugouwuche" class="overa-action-1">立即购买</div>
                     <div @click="jiarugouwuche" class="overa-action-2">加入购物车</div>
                 </div>
@@ -225,6 +222,7 @@
 export default {
     data(){
         return{
+            isShow:false,
             list:[
                 {
                     img:"//imgservice.suning.cn/uimg1/b2c/image/9ywmCZecb9whxLrCL2EiNA.jpg_50w_50h_4e_100Q",
@@ -258,26 +256,22 @@ export default {
             window.history.go(-1)
         },
         quxiao(){
-            document.querySelector('.zhezhaoceng').style.display = "none"
+            this.isShow = false
         },
         xianshi(){
-            document.querySelector('.zhezhaoceng').style.display = "block"
+            this.isShow = true
             document.querySelector('.zhezhao-container').style.height = "400px"
         },
-        // zengjia(){
-        //     this.$store.commit("zengjia");
-        // },
-        // jianshao(){
-        //     this.$store.commit("jianshao")
-        // },
-        // cunchu(){
-        //     this.$store.commit("cunzhu");
-        //     document.querySelector('.zhezhaoceng').style.display = "none"
-        // },
+        zengjia(){
+            this.$store.commit("zengjia");
+        },
+        jianshao(){
+            this.$store.commit("jianshao")
+        },
         jiarugouwuche(){
             this.$store.commit("jiarugouwuche");
             console.log(this.$store)
-            document.querySelector('.zhezhaoceng').style.display = "none"
+            this.isShow = false
 
         },
         chuansongmen(){
@@ -770,7 +764,7 @@ export default {
         position: absolute;
         top: 0;
         padding: 0 1%;
-        display: none;
+        /* display: none; */
     }
     .zhezhao-container {
         width: 98%;

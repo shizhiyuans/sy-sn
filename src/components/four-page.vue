@@ -59,7 +59,7 @@
             </div>
             <div class="settlement">
                 <div class="settlement-1">
-                    <div><input @click="inputs" v-model="selectAll" class="inpussss" type="checkbox"></div>
+                    <div><input v-model="selectAll" class="inpussss" type="checkbox"></div>
                     <div class="settlement-zi">全部</div>
                 </div>
                 <div class="settlement-2">
@@ -104,8 +104,11 @@ export default {
             console.log(newVal);
             if (newVal.length) {
                 this.selectedList = this.list;
+                localStorage.setItem("selectedList",JSON.stringify(this.selectedList))
+
             } else {
                 this.selectedList = [];
+                localStorage.setItem("selectedList",JSON.stringify(this.selectedList))
             }
         }
     },
@@ -113,18 +116,17 @@ export default {
         getPrice () {
             let count = 0;
             this.selectedList.forEach((item) => {
-                count += parseInt(item.price1)*  parseInt(item.number);
+                count += parseInt(item.price1) * parseInt(item.number);
             });
             this.count = count;
+            localStorage.setItem("count",JSON.stringify(this.count))
         },
         wanglingjian(index){
             this.$store.commit("wanglingjian",index)
-            // this.inputClick(index)
             this.getPrice();
         },
         wanglingjia(index){
             this.$store.commit("wanglingjia",index)
-            // this.inputClick(index)
             this.getPrice();
         },
         inputClick(index){
@@ -136,8 +138,6 @@ export default {
                     document.querySelector('.inpussss').checked = true
                 }
             }
-
-
                 if(ars[index].checked == true){
                     this.numberPrice += this.list[index].number * this.list[index].price1;
                     this.number += this.list[index].number;
@@ -147,26 +147,6 @@ export default {
                 }
 
         },
-        inputs(){
-            this
-            // let ars = document.querySelectorAll('.inputed')
-            // let inputeds = document.querySelector('.inpussss')
-            // if(inputeds.checked == true) {
-            //     for(let i=0;i<ars.length;i++){
-            //         ars[i].checked = true
-            //         this.numberPrice += this.list[i].number * this.list[i].price1
-            //         this.number += this.list[i].number 
-            //     }
-            // }else {
-            //     for(let i=0;i<ars.length;i++){
-            //         ars[i].checked = false
-            //         this.numberPrice =0
-            //         this.number = 0
-            //     }
-            // }
-            
-        }
-
     },
     computed:{
         list(){
