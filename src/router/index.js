@@ -5,6 +5,7 @@ import Myfour from "../components/four-page.vue";
 import Myfive from "../components/five-page.vue";
 import Mysix from "../components/six-page.vue";
 import Myseven from "../components/xiangrouter.vue";
+import wangLing from "../components/wangLing.vue";
 const routes = [
     {
         path: "/",
@@ -44,6 +45,14 @@ const routes = [
     {
         path: "/seven",
         component: Myseven,
+        meta: {
+            keepAlive: true, // 需要被缓存
+            isshow:false
+        }
+    },
+    {
+        path: "/wangLing",
+        component: wangLing,
         meta: {
             keepAlive: true, // 需要被缓存
             isshow:false

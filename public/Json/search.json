@@ -1,0 +1,74 @@
+{
+    "result":{
+        "iphone":[
+            {
+                "img":"//uimgproxy.suning.cn/uimg1/pcpv/pcpv/iwogh/2020/01/03/22/iwoghBannerPicture/59d808d378b341bd9ce69ff09b1e588f.png_300w_300h_4e",
+                "title":"Apple iPhone 11 Pro Max 256G",
+                "neicun":"256GB",
+                "chicun":"6.5英寸",
+                "pingjia":"1.1万+条评价",
+                "dianming":"Apple产品苏宁自营旗舰店"
+            },
+            {
+                "img":"//uimgproxy.suning.cn/uimg1/pcpv/pcpv/iwogh/2020/01/01/21/iwoghBannerPicture/06cb3625062349e9bd5dd0d08beab4b6.png_300w_300h_4e",
+                "title":"荣耀 V30",
+                "neicun":"128GB",
+                "chicun":"6.57英寸",
+                "pingjia":"50+条评价",
+                "dianming":"荣耀苏宁自营旗舰店"
+            },
+            {
+                "img":"//uimgproxy.suning.cn/uimg1/pcpv/pcpv/iwogh/2020/01/03/22/iwoghBannerPicture/4ff353b1f14c4e8db17f643eca44c9bf.png_300w_300h_4e",
+                "title":"Apple iPhone XR",
+                "neicun":"128GB",
+                "chicun":"6.1英寸",
+                "pingjia":"54万+条评价",
+                "dianming":"Apple产品苏宁自营旗舰店"
+            },
+            {
+                "img":"//imgservice5.suning.cn/uimg1/b2c/atmosphere/z9O9zIJnN5FR6aW-0H1p1A.jpg_300w_300h_4e",
+                "title":"vivo X30 Pro",
+                "neicun":"128GB",
+                "chicun":"6.44英寸",
+                "pingjia":"20+条评价",
+                "dianming":"vivo手机苏宁自营旗舰店"
+            }
+
+        ],
+        "dianshi":[
+            {
+                "img":"//imgservice2.suning.cn/uimg1/b2c/atmosphere/8Uy1JbuNd9doA8i1qOJ3Rw.jpg_300w_300h_4e",
+                "title":"海尔(Haier) LU65C51 65英寸 4K·HDR 智能WIFI AI智能语音 LED平板液晶电视机",
+                "neicun":"超高清（3840×2160）",
+                "chicun":"2级",
+                "pingjia":"1.1万+条评价",
+                "dianming":"Apple产品苏宁自营旗舰店"
+            },
+            {
+                "img":"//imgservice3.suning.cn/uimg1/b2c/atmosphere/6hWxLaSOz9nl2ROzskt4Yw.jpg_300w_300h_4e",
+                "title":"海尔(Haier) LE32A31 32英寸 智能WIFI 高清网络 4G内存 平板液晶电视机企业价",
+                "neicun":"超高清（3840×2160）",
+                "chicun":"3级",
+                "pingjia":"2.2W+条评价",
+                "dianming":"海尔苏宁自营旗舰店"
+            },
+            {
+                "img":"//imgservice4.suning.cn/uimg1/b2c/image/4m6gEvFfWS7T2Rz4BiTUcw.jpg_300w_300h_4e",
+                "title":"长虹（CHANGHONG）50D5S 50英寸智能4K超高清HDR轻薄平板LED液晶电视机（黑色）",
+                "neicun":"超高清（3840×2160）",
+                "chicun":"3级",
+                "pingjia":"54万+条评价",
+                "dianming":"长虹电视苏宁自营旗舰店"
+            },
+            {
+                "img":"//imgservice1.suning.cn/uimg1/b2c/atmosphere/-Psj03gdzDWmD2RHZXbleA.jpg_300w_300h_4e",
+                "title":"海尔(Haier) LE43M31 43英寸全高清 智能网络平板电视机 40 39",
+                "neicun":"128GB",
+                "chicun":"6.9英寸",
+                "pingjia":"20W+条评价",
+                "dianming":"海尔苏宁自营旗舰店"
+            }
+        ]
+
+    }
+}

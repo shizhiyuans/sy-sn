@@ -21,12 +21,14 @@
                     <div class="title-img"><img src="https://image3.suning.cn/uimg/cms/img/157623112045989921.gif" alt=""></div>
                     <div class="head-flex"><img src="https://image1.suning.cn/uimg/cms/img/157199321817918653.png" alt=""></div>
                 </div>
-                <a class="title-wrap" href="//m.suning.com/search.html?defaultWord=手机满千减百">
-                    <div class="box-input">
-                        <span class="iconfont icon-fangdajing"></span>
-                        <span class="ziyuansu">手机满千减百</span>
-                    </div>
-                </a>
+                <div class="title-wrap" href="//m.suning.com/search.html?defaultWord=手机满千减百">
+                    <!-- <div class="box-input"> -->
+                        <!-- <span class="iconfont icon-fangdajing"></span>
+                        <span class="ziyuansu">手机满千减百</span> -->
+                    <!-- </div> -->
+                    <input type="text" @click="tiaozhuanwangLin" class="box-input ziyuansu" placeholder="手机满千减百">
+                    
+                </div>
                 <div class="three-box">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
@@ -229,6 +231,9 @@
             },
             tiaofive() {
                 this.$router.push({path:"/five"})
+            },
+            tiaozhuanwangLin() {
+                this.$router.push({path:"/wangLing"})
             }
             
         }
@@ -321,8 +326,9 @@
     }
 
     .ziyuansu {
-        margin-left: 10px;
-        font-size: 14px
+        font-size: 14px;
+        border: none;
+        outline: none
     }
     .three-box {
         width: 100%;
