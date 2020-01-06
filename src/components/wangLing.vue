@@ -61,23 +61,16 @@ export default {
             let that = this
             if(this.val == '手' || this.val == '手机'){
                 axios.get('http://localhost:8080/json/search.json')
-                .then(function (response) {
-                    console.log(response.data.result.iphone[0].title);
-                    console.log(that.list)
+                .then((response) => {
                     that.list = response.data.result.iphone 
-                }).catch(function (error) {
-                console.log(error);
-                console.log(222)
-            });
+                });
             }else if(this.val == '电' || this.val == '电视'){
                 axios.get('http://localhost:8080/json/search.json')
-                .then(function (response) {
-                    console.log(that.list)
+                .then((response) => {
                     that.list = response.data.result.dianshi 
-                }).catch(function (error) {
-                console.log(error);
-                console.log(222)
-            });
+                });
+            }else {
+                that.list = ""
             }
             
 
@@ -136,6 +129,7 @@ export default {
         width: 110px;
         height: 110px;
         margin-right: 15px;
+        flex-shrink: 0;
     }
     .shortTitle-1 img {
         width: 100%;
